@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Work Areas Tree</title>
+
+<style>
+  body {
+    font-family: Segoe UI, Arial, sans-serif;
+    background: #ffffff;
+    padding: 20px;
+  }
+
+  .tree {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+
+  .tree li {
+    margin: 6px 0;
+    cursor: pointer;
+  }
+
+  .folder::before {
+    content: "📁 ";
+  }
+
+  .file::before {
+    content: "📄 ";
+    cursor: default;
+  }
+
+  .nested {
+    display: none;
+    margin-left: 20px;
+  }
+
+  .open > .nested {
+    display: block;
+  }
+
+  .folder:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+
+<body>
+
+<h3>Work areas</h3>
+
+<ul class="tree">
+  <li class="folder" onclick="toggle(this)">
+    Master Batch Records
+    <ul class="nested">
+      <li class="file">MBR administration</li>
+      <li class="file">Library administration</li>
+      <li class="file">Generic MBR administration </li>
+      <li class="file">Parameterized MBR administration</li>
+      <li class="file">Parameter Value List administration </li>
+      <li class="file">Parameter </li>
+      <li class="file">Incoming MBR Data from ERP </li>
+      <li class="file">Element Marker </li>
+      
+    </ul>
+  </li>
+
+  <li class="folder">Equipment</li>
+  <li class="folder">Master Data</li>
+  <li class="folder">WMS Master Data</li>
+  <li class="folder">WMS Supervisor</li>
+  <li class="folder">WMS Shop Floor</li>
+  <li class="folder">PAS-X configuration</li>
+  <li class="folder">PCS Element administration</li>
+  <li class="folder">Message administration</li>
+
+  <li class="folder" onclick="toggle(this)">
+    System
+    <ul class="nested">
+      <li class="file">MSI Interface</li>
+      <li class="file">Intray</li>
+    </ul>
+  </li>
+</ul>
+
+<script>
+  function toggle(element) {
+    element.classList.toggle("open");
+  }
+</script>
+
+</body>
+</html>
